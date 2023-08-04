@@ -9,7 +9,7 @@ class HijaiyahController extends ChangeNotifier {
   Future<List<Hijaiyah>> getAllItem() async {
     try {
       var response = await http.get(Uri.parse(
-          "https://9172-103-190-47-56.ngrok-free.app/hijaiyah"));
+          "https://cedb-2400-9800-8c3-575a-7932-d54e-88b6-b217.ngrok-free.app/hijaiyah"));
       List data = (json.decode(response.body) as Map<String, dynamic>)["data"];
       data.forEach((element) {
         allItem.add(Hijaiyah.fromJson(element));

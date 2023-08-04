@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iqra_app/constant/font_color.dart';
-import 'package:iqra_app/modules/hijaiyah/views/huruf.dart';
+// import 'package:iqra_app/modules/hijaiyah/views/huruf.dart';
 import 'package:iqra_app/modules/splashscreen.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class IqraApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: font,
-      home: HurufHijaiyah(),
+      home: const SplashScreen(),
     );
   }
 }

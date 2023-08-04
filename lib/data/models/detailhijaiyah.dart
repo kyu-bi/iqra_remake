@@ -1,186 +1,91 @@
-// // To parse this JSON data, do
-// //
-// //     final detailHijaiyah = detailHijaiyahFromJson(jsonString);
-
-// import 'dart:convert';
-
-// DetailHijaiyah detailHijaiyahFromJson(String str) => DetailHijaiyah.fromJson(json.decode(str));
-
-// String detailHijaiyahToJson(DetailHijaiyah data) => json.encode(data.toJson());
-
-// class DetailHijaiyah {
-//     int id;
-//     String huruf;
-//     String tulisanLatin;
-//     DateTime createdAt;
-//     DateTime updatedAt;
-//     List<Harkat> harkats;
-
-//     DetailHijaiyah({
-//         required this.id,
-//         required this.huruf,
-//         required this.tulisanLatin,
-//         required this.createdAt,
-//         required this.updatedAt,
-//         required this.harkats,
-//     });
-
-//     factory DetailHijaiyah.fromJson(Map<String, dynamic> json) => DetailHijaiyah(
-//         id: json["id"],
-//         huruf: json["huruf"],
-//         tulisanLatin: json["tulisan_latin"],
-//         createdAt: DateTime.parse(json["createdAt"]),
-//         updatedAt: DateTime.parse(json["updatedAt"]),
-//         harkats: List<Harkat>.from(json["harkats"].map((x) => Harkat.fromJson(x))),
-//     );
-
-//     Map<String, dynamic> toJson() => {
-//         "id": id,
-//         "huruf": huruf,
-//         "tulisan_latin": tulisanLatin,
-//         "createdAt": createdAt.toIso8601String(),
-//         "updatedAt": updatedAt.toIso8601String(),
-//         "harkats": List<dynamic>.from(harkats.map((x) => x.toJson())),
-//     };
-// }
-
-// class Harkat {
-//     int id;
-//     int hurufId;
-//     String harkat;
-//     String tulisanArab;
-//     String tulisanLatin;
-//     String pengucapan;
-//     String audio;
-//     DateTime createdAt;
-//     DateTime updatedAt;
-
-//     Harkat({
-//         required this.id,
-//         required this.hurufId,
-//         required this.harkat,
-//         required this.tulisanArab,
-//         required this.tulisanLatin,
-//         required this.pengucapan,
-//         required this.audio,
-//         required this.createdAt,
-//         required this.updatedAt,
-//     });
-
-//     factory Harkat.fromJson(Map<String, dynamic> json) => Harkat(
-//         id: json["id"],
-//         hurufId: json["huruf_id"],
-//         harkat: json["harkat"],
-//         tulisanArab: json["tulisan_arab"],
-//         tulisanLatin: json["tulisan_latin"],
-//         pengucapan: json["pengucapan"],
-//         audio: json["audio"],
-//         createdAt: DateTime.parse(json["createdAt"]),
-//         updatedAt: DateTime.parse(json["updatedAt"]),
-//     );
-
-//     Map<String, dynamic> toJson() => {
-//         "id": id,
-//         "huruf_id": hurufId,
-//         "harkat": harkat,
-//         "tulisan_arab": tulisanArab,
-//         "tulisan_latin": tulisanLatin,
-//         "pengucapan": pengucapan,
-//         "audio": audio,
-//         "createdAt": createdAt.toIso8601String(),
-//         "updatedAt": updatedAt.toIso8601String(),
-//     };
-// }
-// To parse this JSON data, do
-//
-//     final detailHijaiyah = detailHijaiyahFromJson(jsonString);
-
 import 'dart:convert';
 
-DetailHijaiyah detailHijaiyahFromJson(String str) => DetailHijaiyah.fromJson(json.decode(str));
+DetailHijaiyah detailHijaiyahFromJson(String str) =>
+    DetailHijaiyah.fromJson(json.decode(str));
 
 String detailHijaiyahToJson(DetailHijaiyah data) => json.encode(data.toJson());
 
 class DetailHijaiyah {
-    int id;
-    String huruf;
-    String tulisanLatin;
-    String pengucapan;
-    DateTime createdAt;
-    DateTime updatedAt;
-    List<Harkat> harkats;
+  int id;
+  String huruf;
+  String tulisan_latin;
+  String pengucapan;
+  DateTime createdAt;
+  DateTime updatedAt;
+  List<Harkat> harkats;
 
-    DetailHijaiyah({
-        required this.id,
-        required this.huruf,
-        required this.tulisanLatin,
-        required this.pengucapan,
-        required this.createdAt,
-        required this.updatedAt,
-        required this.harkats,
-    });
+  DetailHijaiyah({
+    required this.id,
+    required this.huruf,
+    required this.tulisan_latin,
+    required this.pengucapan,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.harkats,
+  });
 
-    factory DetailHijaiyah.fromJson(Map<String, dynamic> json) => DetailHijaiyah(
+  factory DetailHijaiyah.fromJson(Map<String, dynamic> json) => DetailHijaiyah(
         id: json["id"],
         huruf: json["huruf"],
-        tulisanLatin: json["tulisan_latin"],
+        tulisan_latin: json["tulisan_latin"],
         pengucapan: json["pengucapan"],
         createdAt: DateTime.parse(json["createdAt"]),
         updatedAt: DateTime.parse(json["updatedAt"]),
-        harkats: List<Harkat>.from(json["harkats"].map((x) => Harkat.fromJson(x))),
-    );
+        harkats:
+            List<Harkat>.from(json["harkats"].map((x) => Harkat.fromJson(x))),
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "huruf": huruf,
-        "tulisan_latin": tulisanLatin,
+        "tulisan_latin": tulisan_latin,
         "pengucapan": pengucapan,
         "createdAt": createdAt.toIso8601String(),
         "updatedAt": updatedAt.toIso8601String(),
         "harkats": List<dynamic>.from(harkats.map((x) => x.toJson())),
-    };
+      };
 }
 
 class Harkat {
-    int id;
-    int hurufId;
-    String harkat;
-    String tulisanArab;
-    String tulisanLatin;
-    String audio;
-    DateTime createdAt;
-    DateTime updatedAt;
+  int id;
+  int huruf_id;
+  String harkat;
+  String tulisan_arab;
+  String tulisan_latin;
+  String audio;
+  DateTime createdAt;
+  DateTime updatedAt;
 
-    Harkat({
-        required this.id,
-        required this.hurufId,
-        required this.harkat,
-        required this.tulisanArab,
-        required this.tulisanLatin,
-        required this.audio,
-        required this.createdAt,
-        required this.updatedAt,
-    });
+  Harkat({
+    required this.id,
+    required this.huruf_id,
+    required this.harkat,
+    required this.tulisan_arab,
+    required this.tulisan_latin,
+    required this.audio,
+    required this.createdAt,
+    required this.updatedAt,
+  });
 
-    factory Harkat.fromJson(Map<String, dynamic> json) => Harkat(
+  factory Harkat.fromJson(Map<String, dynamic> json) => Harkat(
         id: json["id"],
-        hurufId: json["huruf_id"],
+        huruf_id: json["huruf_id"],
         harkat: json["harkat"],
-        tulisanArab: json["tulisan_arab"],
-        tulisanLatin: json["tulisan_latin"],
+        tulisan_arab: json["tulisan_arab"],
+        tulisan_latin: json["tulisan_latin"],
         audio: json["audio"],
         createdAt: DateTime.parse(json["createdAt"]),
         updatedAt: DateTime.parse(json["updatedAt"]),
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
-        "huruf_id": hurufId,
+        "huruf_id": huruf_id,
         "harkat": harkat,
-        "tulisan_arab": tulisanArab,
-        "tulisan_latin": tulisanLatin,
+        "tulisan_arab": tulisan_arab,
+        "tulisan_latin": tulisan_latin,
         "audio": audio,
         "createdAt": createdAt.toIso8601String(),
         "updatedAt": updatedAt.toIso8601String(),
-    };
+      };
 }

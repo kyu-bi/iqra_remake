@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:iqra_app/constant/font_color.dart';
 
@@ -12,21 +14,21 @@ class HurufHijaiyah extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("IQRA' KU"),
-        titleTextStyle: TextStyle(
+        title: const Text("IQRA' KU"),
+        titleTextStyle: const TextStyle(
             fontSize: 25, fontWeight: FontWeight.w900, fontFamily: "Beachday"),
         backgroundColor: bluegrey,
       ),
-      backgroundColor: Color(0xffF0F0F0),
+      backgroundColor: const Color(0xffF0F0F0),
       body: Column(
         children: [
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Container(
             width: 360,
             height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 colors: [Color(0xff538299), Color(0xffa7c4d2)],
               ),
               boxShadow: [
@@ -52,7 +54,7 @@ class HurufHijaiyah extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 60),
+                const SizedBox(width: 60),
                 Positioned(
                   bottom: -20,
                   right: -10,
@@ -79,7 +81,7 @@ class HurufHijaiyah extends StatelessWidget {
                           foreground: Paint()
                             ..style = PaintingStyle.stroke
                             ..strokeWidth = 6
-                            ..color = Color.fromARGB(255, 3, 103, 142),
+                            ..color = const Color.fromARGB(255, 3, 103, 142),
                           fontFamily: "beachday",
                         ),
                       ),
@@ -97,7 +99,7 @@ class HurufHijaiyah extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Expanded(
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -109,7 +111,7 @@ class HurufHijaiyah extends StatelessWidget {
                   )
                 ],
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(40),
                   topRight: Radius.circular(40),
                 ),
@@ -121,13 +123,13 @@ class HurufHijaiyah extends StatelessWidget {
                     future: hijaiyahC.getAllItem(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(
+                        return const Center(
                           child: CircularProgressIndicator(),
                         );
                       }
                       //jika tidak punya data
                       if (!snapshot.hasData) {
-                        return Center(child: Text("Tidak Ada Data"));
+                        return const Center(child: Text("Tidak Ada Data"));
                       }
 
                       return Directionality(
@@ -136,7 +138,7 @@ class HurufHijaiyah extends StatelessWidget {
                             itemCount: snapshot.data!.length,
                             shrinkWrap: false,
                             gridDelegate:
-                                SliverGridDelegateWithMaxCrossAxisExtent(
+                                const SliverGridDelegateWithMaxCrossAxisExtent(
                               maxCrossAxisExtent: 100,
                               childAspectRatio: 1 / 1,
                               crossAxisSpacing: 20,
@@ -157,7 +159,7 @@ class HurufHijaiyah extends StatelessWidget {
                                     Container(
                                       width: 300,
                                       height: 300,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         image: DecorationImage(
                                           image: AssetImage(
                                               "assets/img/huruf1.png"),
@@ -172,14 +174,14 @@ class HurufHijaiyah extends StatelessWidget {
                                         children: [
                                           Text(
                                             "${hijaiyah.huruf}",
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 30,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
                                             "${hijaiyah.tulisanLatin}",
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold),
                                           ),
